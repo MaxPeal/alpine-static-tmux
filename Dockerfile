@@ -9,7 +9,7 @@ run apk update && \
     apk add make gcc musl-dev autoconf automake 
 
 # libevent
-env libevent_version 2.1.8
+env libevent_version 2.1.10
 env libevent_name libevent-$libevent_version-stable
 add https://github.com/libevent/libevent/releases/download/release-$libevent_version-stable/libevent-$libevent_version-stable.tar.gz /tmp/$libevent_name.tar.gz
 run tar xvzf /tmp/$libevent_name.tar.gz && \
@@ -20,7 +20,7 @@ run tar xvzf /tmp/$libevent_name.tar.gz && \
     rm -fr /tmp/$libevent_name.tar.gz /tmp/$libevent_name
 
 # ncurses
-env ncurses_version 6.1
+env ncurses_version 6.2
 env ncurses_name ncurses-$ncurses_version
 add https://ftp.gnu.org/gnu/ncurses/$ncurses_name.tar.gz /tmp/$ncurses_name.tar.gz 
 run tar xvzf /tmp/$ncurses_name.tar.gz && \
@@ -31,7 +31,7 @@ run tar xvzf /tmp/$ncurses_name.tar.gz && \
     rm -fr /tmp/$ncurses_name.tar.gz /tmp/$ncurses_name
 
 # tmux
-env tmux_version 2.7
+env tmux_version 3.1b
 env tmux_name tmux-$tmux_version
 add https://github.com/tmux/tmux/releases/download/$tmux_version/$tmux_name.tar.gz /tmp/$tmux_name.tar.gz
 run tar xvzf /tmp/$tmux_name.tar.gz && \
