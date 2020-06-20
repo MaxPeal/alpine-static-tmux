@@ -21,6 +21,7 @@ run tar xvzf /tmp/$libevent_name.tar.gz && \
     cd $libevent_name && \
     ./configure --prefix=$dest_prefix --disable-shared && \
     make && \
+    make check && \
     make install && \
     rm -fr /tmp/$libevent_name.tar.gz /tmp/$libevent_name
 
@@ -32,6 +33,7 @@ run tar xvzf /tmp/$ncurses_name.tar.gz && \
     cd $ncurses_name && \
     ./configure --prefix=$dest_prefix --without-cxx --without-cxx-bindings --enable-static && \
     make && \
+    make check && \
     make install && \
     rm -fr /tmp/$ncurses_name.tar.gz /tmp/$ncurses_name
 
@@ -43,6 +45,7 @@ run tar xvzf /tmp/$tmux_name.tar.gz && \
     cd $tmux_name && \
     ./configure --prefix=$dest_prefix CFLAGS="-I$dest_prefix/include -I$dest_prefix/include/ncurses" LDFLAGS="-static -L$dest_prefix/lib -L$dest_prefix/include/ncurses -L$dest_prefix/include" && \
     env CPPFLAGS="-I$dest_prefix/include -I$dest_prefix/include/ncurses" LDFLAGS="-static -L$dest_prefix/lib -L$dest_prefix/include/ncurses -L$dest_prefix/include" make && \
+    make check && \
     make install && \
     rm -fr /tmp/$tmux_name.tar.gz /tmp/$tmux_name && \
     mv $dest_prefix/bin/tmux $dest_prefix/bin/tmux-static && \
