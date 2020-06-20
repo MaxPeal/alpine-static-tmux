@@ -5,7 +5,10 @@ env dest_prefix /usr/local/
 workdir /tmp
 
 run echo "http://dl-5.alpinelinux.org/alpine/latest-stable/main" >> /etc/apk/repositories; \
-    echo "http://dl-5.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories;
+    echo "http://dl-5.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories; \
+    echo "https://mirror1.hs-esslingen.de/pub/Mirrors/alpine/latest-stable/main" >> /etc/apk/repositories; \
+    echo "https://mirror1.hs-esslingen.de/pub/Mirrors/alpine/latest-stable/community" >> /etc/apk/repositories;
+
     
 run apk update && \
     apk upgrade && \
