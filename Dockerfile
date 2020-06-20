@@ -1,4 +1,4 @@
-from alpine:3.12
+from alpine:latest
 
 env dest_prefix /usr/local/
 
